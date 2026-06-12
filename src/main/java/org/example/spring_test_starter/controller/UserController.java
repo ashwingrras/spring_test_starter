@@ -27,6 +27,4 @@ public class UserController {
         System.out.println(user.getName());
         return service.save(user);
     }
-
-
 }

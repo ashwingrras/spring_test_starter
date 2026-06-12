@@ -14,11 +14,23 @@ public class UserService {
     private final UserRepository repository;
 
     public User save(User user){
+        System.out.println("inside UserService save method");
         return repository.save(user);
     }
 
     public List<User> findAll(){
         return repository.findAll();
+    }
+
+    public boolean checkUserByName(String username) {
+
+        User user = repository.findByName(username);
+        System.out.println("user as "+user.getName());
+        if (user == null) {
+            return false;
+        }
+
+        return true;
     }
 
 
